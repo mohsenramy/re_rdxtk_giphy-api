@@ -1,13 +1,101 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+header {
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: skyblue;
+  color: whitesmoke;
+  position: sticky;
+  top: 0;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav a,
+nav a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+.searchContainer {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  background: #e6e3e3;
+  border: transparent;
+  /* border-width: 0.1rem; */
+  border-radius: 0.5rem;
+  /* border-color: red; */
+}
+.searchTerm {
+  margin-right: 0.2rem;
+}
+
+.searchResultsContainer {
+  background: #e6e3e3;
+  display: block;
+  /* vertical-align: top; */
+  border: solid;
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  border-color: cornflowerblue;
+  margin: 0rem 1rem;
+  padding: 0.2rem;
+}
+
+.searchResults {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+  /* border: solid;
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  border-color: red; */
+}
+.searchResult {
+  display: inline-block;
+  background: #ffffff;
+  margin: 0.1rem;
+  padding: 0.3rem 0.1rem;
+  text-align: center;
+  border: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+}
+.searchResult p {
+  font-size: xx-small;
 }
