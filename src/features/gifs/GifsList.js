@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import GifsResultsPagination from "./GifsResultsPagination";
 import { getGifsStatus, selectAllGifs } from "./gifsSlice";
 
 const GifsList = () => {
@@ -16,10 +17,14 @@ const GifsList = () => {
   } else if (status === "loading") {
     message = <div>...Loading</div>;
   } else if (status === "succeeded") {
-    if (gifs.data.length === 0) {
+    if (gifs.length === 0) {
       message = <div>Found no results </div>;
     }
-    content = gifs.data.map((gif) => {
+    message = <GifsResultsPagination />;
+
+    content = gifs.map((gif) => {
+      // console.log("🚀 ~ file: GifsList.js:34 ~ content+=gifs.map ~ gif", gif);
+
       return (
         <div key={gif.id} className="searchResult">
           {/* <div>{gif.images.fixed_height.url}</div> */}
@@ -28,7 +33,6 @@ const GifsList = () => {
         </div>
       );
     });
-    console.log(gifs);
   }
 
   return (

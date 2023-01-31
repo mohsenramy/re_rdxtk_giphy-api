@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchGifs } from "./gifsSlice";
+import { addSearchTerm, fetchGifs } from "./gifsSlice";
 
 const GifsSearch = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const GifsSearch = () => {
   const [searchText, setSearchText] = useState("");
 
   const onSearchClicked = () => {
-    dispatch(fetchGifs(searchText));
+    dispatch(fetchGifs({ searchTerm: searchText }));
   };
 
   const onSearchTermChanges = (e) => {
